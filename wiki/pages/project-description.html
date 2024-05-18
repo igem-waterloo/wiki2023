@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col">
+    <h1>Explore our project!</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-3">
+      <div class="mt-4 mb-4 text-center">
+        <img src="static/guarden.png" class="img-fluid">      
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-5"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='description') }}"
+        style="text-decoration: none; color: black">
+        Description
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='engineering') }}"
+      style="text-decoration: none; color: black">
+      Engineering
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='project-notebook') }}"
+      style="text-decoration: none; color: black">
+      Notebook
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-7">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/healthy-tomato.png" class="img-fluid"> 
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">PROJECT DESCRIPTION</h3>
+    <div class="mt-4 card bg-mint">
+      <p>
+      Our project focuses on tackling the challenge of Tomato Spotted Wilt Virus (TSWV) in tomatoes. TSWV is a viral disease that affects tomato plants, leading to significant yield losses and reduced crop quality. It poses a threat to tomato production worldwide, making it crucial to develop effective strategies to combat this disease.
+      <br></br>
+      To address this challenge, our team aimed to develop an RNA interference (RNAi) mechanism as a potential solution. RNAi is a natural biological process that regulates gene expression by targeting and degrading specific RNA molecules. By harnessing RNAi, we plan to interfere with the replication and expression of TSWV genes, thus mitigating the negative effects of the virus on tomato plants. By developing an RNAi-based approach, our project aimed to provide a promising and sustainable solution for tomato farmers to combat this viral disease. Ultimately, our goal is to contribute to the advancement of biotechnology in agriculture and ensure food security by safeguarding tomato crops from TSWV-related losses.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <div class="mt-4">
+      <button type="button" class="btn btn-primary bg-mint text-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        View Infographic
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-mint">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mt-4 mb-4 text-center">
+          <img src="static/graphic.png" class="img-fluid">      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center embed-responsive embed-responsive-16by9">
+  <div class="col col-flex">
+    <div class="mt-4 card bg-mint">
+      <video class="embed-responsive-item" controls>
+        <source src="https://video.igem.org/videos/embed/96dd9861-60a2-49bd-b7bf-b406d4ae3e90" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">CHOOSING OUR PROJECT</h3>
+    <div class="mt-4">
+      <p>
+      The initial idea for Guarden piqued the interest of our members’ for a variety of reasons. 
+      </p>
+      
+      <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-caption">
+              <h3>Boyd W.</h3>
+              <p>TEXT</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+              <h3>Diane L</h3>
+              <p>TEXT</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+              <h3>Randall L</h3>
+              <p>TEXT</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+              <h3>John D.</h3>
+              <p>TEXT</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+              <h3>Jody B.</h3>
+              <p>TEXT</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>-->
+    </div>
+    <div class="mt-4 card bg-mint">
+      <p>
+      Agriculture is an industry that affects all Canadians and all people worldwide. In recent years, Canada has seen food shortages such as a lettuce shortage, among other crops. Initially, our interest was piqued by the lettuce shortages recorded in recent years, causing our team to learn about the family of viruses that includes Tomato Spotted Wilt Virus (TSWV) and Impatiens Necrotic Spot Virus, both of which affect lettuce, tomatoes, and almost a hundred other crops.
+      </p>
+      <p>
+      Advances in biotechnology and genetic engineering have provided many with powerful tools and techniques to combat plant diseases. Our team was motivated to contribute to the scientific understanding of RNA interference mechanisms in plant virology, specifically in the context of TSWV. RNA interference (RNAi), the approach we are employing, has proven successful in controlling various viral infections in other crops. Leveraging these technological advancements would allow us to apply cutting-edge solutions to tackle TSWV in tomatoes.
+      </p>
+      <p>
+      As seen with previous projects from Waterloo iGEM, our team often finds inspiration in projects that can aid in decreasing environmental impacts, a passion of our members. Bioremediation approaches, such as the RNAi mechanism we are developing, align with the principles of sustainability and environmental conservation. By targeting the TSWV virus specifically, we hoped to minimize the need for broad-spectrum chemical pesticides that may have negative impacts on the environment and non-target organisms. This approach promotes sustainable agricultural practices and reduces the ecological footprint associated with tomato cultivation.
+      </p>
+    </div>
+    <div class="mt-4">
+      <p>
+        Ultimately, our team's vision is to create a positive impact by revolutionizing pest control practices and promoting sustainable agriculture. We aspire to inspire change, not only in our local community but also globally, by offering an alternative that is better for the environment, enhances food security, and ensures a healthier and more sustainable future for generations to come.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">INSPIRATION</h3>
+    <div class="mt-4 card bg-mint">
+      <p>
+      Our project was inspired by a  paper that has made significant contributions to the current state of our project, specifically the challenge of using RNA interference (RNAi) in plant protection, is "Bacterium-Mediated RNA Interference: Potential Application in Plant Protection" by Goodfellow et al. (2019). This paper explores the potential of bacterium-mediated RNAi (bmRNAi) as a method for delivering RNAi-based biocontrol agents to plants. It discusses the advantages and limitations of different RNAi delivery methods and proposes bmRNAi as an intermediate option between transgenic plants and exogenous RNAi. Goodfellow et al. present experimental evidence showing that engineered strains of endophytic bacteria can induce medium-term, systemic silencing of plant-expressed genes in Nicotiana tabacum. The authors demonstrate that these bacteria can colonize plant tissues and cells, synthesize hairpin RNA (hpRNA), and release it into the extracellular milieu and directly into plant cells. The hpRNA is then transported systemically through the plant's vascular system, inducing sequence-specific gene silencing. The paper highlights the potential benefits of bmRNAi, including stronger systemic silencing, improved dsRNA penetration and uptake, and the ability to combine RNAi with the protective capabilities of endophytic bacteria. It also acknowledges the challenges associated with the release of genetically modified bacteria and the need for further research to optimize bmRNAi systems.
+      <br></br>
+      Our team also drew inspiration from the 2021 Kyoto iGEM team that tackled a similar environmental challenge using synthetic biology. They developed a multi-layered system to detect viral infections in plants using machine learning for image diagnosis combined with CRISPR-Cas12a assisted (RT)-LAMP for molecular validation. They also worked on reducing the spread of viruses by targeting thrips, a vector for plant viruses, using RNA interference (RNAi). Additionally, they explored alternatives to silver thiosulfate (STS) for preventing flower aging and developed methods to extend the life of cut flowers by administering antimicrobial peptides and biofilm-degrading enzymes. Focusing on their work with thrips (the main transmitter of TSWV) the team focused on developing a cost-effective method to produce double-stranded RNA (dsRNA) in E. coli for controlling thrips through RNA interference (RNAi). They aimed to address the challenge of synthesizing dsRNA at a large scale for future application as a spray-type pesticide.  The team's goal was to explore the potential of using dsRNA as a pesticide that could be conveniently applied through spraying, provided sufficient amounts of dsRNA are attached to the leaves. The ability to produce large quantities of dsRNA using E. coli was seen as a supportive factor for the envisioned spraying method.
+      </p>
+    </div>
+    <div class="mt-4">
+      <p>
+        REFERENCES
+      </p>
+      <ul class="navbar-nav">
+        <li class="my-2">Farley, M. M., Hu, B., Margolin, W., & Liu, J. (2016). Minicells, Back in Fashion. Journal of bacteriology, 198(8), 1186–1195. https://doi.org/10.1128/JB.00901-15</li>
+        <li class="my-2">Gawande, S. J., Anandhan, S., Ingle, A., Roylawar, P., Khandagale, K., Gawai, T., Jacobson, A., Asokan, R., & Singh, M. (2019). Microbiome profiling of the onion thrips, Thrips tabaci Lindeman (Thysanoptera: Thripidae). PloS one, 14(9), e0223281. https://doi.org/10.1371/journal.pone.0223281</li>
+        <li class="my-2">Goodfellow, S., Zhang, D., Wang, M. B., & Zhang, R. (2019). Bacterium-Mediated RNA Interference: Potential Application in Plant Protection. Plants (Basel, Switzerland), 8(12), 572. https://doi.org/10.3390/plants8120572</li>
+        <li class="my-1">Hirano, S. S., & Upper, C. D. (2000). Bacteria in the leaf ecosystem with emphasis on Pseudomonas syringae-a pathogen, ice nucleus, and epiphyte. Microbiology and molecular biology reviews : MMBR, 64(3), 624–653. https://doi.org/10.1128/MMBR.64.3.624-653.2000</li>
+        <li class="my-2">Islam, M. T., Davis, Z., Chen, L., Englaender, J., Zomorodi, S., Frank, J., Bartlett, K., Somers, E., Carballo, S. M., Kester, M., Shakeel, A., Pourtaheri, P., & Sherif, S. M. (2021). Minicell‐based fungal rnai Delivery for Sustainable Crop Protection. Microbial Biotechnology, 14(4), 1847–1856. https://doi.org/10.1111/1751-7915.13699</li>
+        <li class="my-2">Tabein, S., Jansen, M., Noris, E., Vaira, A. M., Marian, D., Behjatnia, S. A., Accotto, G. P., & Miozzi, L. (2020). The induction of an effective dsrna-mediated resistance against tomato spotted wilt virus by exogenous application of double-stranded RNA largely depends on the selection of the viral RNA target region. Frontiers in Plant Science, 11. https://doi.org/10.3389/fpls.2020.533338</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

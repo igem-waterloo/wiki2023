@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="text-decoration-underline">Human Practices</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-4"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='human-practices') }}"
+        style="text-decoration: none; color: black">
+        Human Practices
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-problem') }}"
+      style="text-decoration: none; color: black">
+      Defining the Problem
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-thrip') }}"
+      style="text-decoration: none; color: black">
+      The Thrip
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-solution') }}"
+      style="text-decoration: none; color: black">
+      Our Solution
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid">
+      </div>
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid translate-middle-x-flipped">
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">DEFINING THE PROBLEM</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>
+      Tomato Spotted Wilt Virus became an issue in Canada around 1980 (APSnet, n.d.). It appeared in epidemic volumes in south western and central Ontario through infected tomato and pepper plants imported from Georgia, United States (APSnet, n.d.). The virus spread rapidly and was detected in over 80% of tomato fields (APSnet, n.d.). The virus spread to various other plants in Ontario, such as other species of tomatoes, peppers, and potatoes through the Western Flower Thrip, an invasive species in Ontario (APSnet, n.d.). This creates a problem for Ontario’s vegetable production (APSnet, n.d.).
+      <br></br>
+      TSWV was detected in British Columbia around 1973 due to the Western Flower Thrips, which are native to BC (Bitterlich & MacDonald, 1993). These creatures became an issue not only for field crops but also for greenhouses, particularly after 1983 (Bitterlich & MacDonald, 1993). During 1987 to May 1991, 35 sites of TSWV were identified and large losses to greenhouse crops were incurred (Bitterlich & MacDonald, 1993). In recent years, grower patterns have shown that when greenhouse crops become infected with viruses, growers will pivot to other greenhouse crops such as cucumbers to compensate for the loss, switching crops to prevent virus spread that can be caused by multiple years growing the same crop in the same area (M. Condoluci, personal communication, July 1, 2023). When a farmer’s crop is destroyed by viruses, such as Tomato Spotted Wilt Virus or Tomato Brown Rugose Fruit Virus, farmer’s may receive subsidization for their loses, but this subsidization will not cover the full cost, contributing to the switch from tomatoes to another crop when an outbreak occurs (M. Condoluci, personal communication, July 1, 2023). This in turn contributes to an increase in tomato prices due to the decreased total yield for the season.
+      <br></br>
+      Over 200 species of plants were listed as hosts for TSWV yet it was still difficult to discern which plants are the potential sources for TSWV (Jackson, n.d.). Weeds have also become carriers of TSWV in Hawaii (Jackson, n.d.). There are 2 predominant strains of TSWV. There is the lettuce strain which affects vegetables and there is the impatiens strain which affects ornamental crops, with both strains being capable of affecting either kind of crop (Jackson, n.d.).
+      <br></br>
+      When thrips feed on vegetation, they cause scarring to occur on the leaves. In extreme cases, plants can become distorted and fruit can become misshapen and unevenly ripened, often with a necrotic spot pattern (Murphy, Ferguson & Shipp, 2022). Thrips may also lay eggs in the fruit, which is seen in tomato, causing a spotted pattern called ghost-spotting (Murphy, Ferguson & Shipp, 2022). This ghost spotting causes the appearance of the tomatoes to drop below consumer standards. The thrips initially puncture a hole in the plant cuticle with their single mandible. Once this opening is created a pair of maxillary stylets are extended into the plant tissue and saliva is pumped into the plant tissue, transmitting TSWV (Riley et al., n.d.).
+      <br></br>
+      Tomatoes are also often included in crop rotation systems due to their ability to improve soil health and reduce the risk of soil-borne diseases. They have a wide range of culinary applications and an undying demand. Furthermore, it’s one of the few crops which thrive on large scale production by farmers and greenhouses, as well as small scale production by anyone at home.
+      </h3>
+    </div>
+    <div class="mt-4 mb-5">
+      <img src="https://static.igem.wiki/teams/4704/wiki/infographic.jpg" class="img-fluid">
+    </div>
+    <div class="mt-4 col-10">
+      <h3>
+      Tomatoes are one of the few types of produce that are available year-round in various farms across the world. They strongly contribute to food security and accessibility, along with aiding the economies of various countries. In 2016, researcher Dari Duval, “found that imports of fresh tomatoes supported $4.8 billion in sales in the U.S. economy in 2016. That works out to 2.9 billion in gross domestic product and, finally, 33,000 jobs were supported through that economic activity” (Esquer, 2018). Tomatoes are a reliable and trusted produce that groceries can expect in that basket of most consumers (M. Condoluci, personal communication, July 1, 2023). At the same time, consumers have high expectations for the quality of tomatoes. Quality in the taste characteristics to ensure they are the same across the board, size, and shelf life to last in normal house conditions must be ensured (M. Condoluci, personal communication, July 1, 2023).
+      </h3>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

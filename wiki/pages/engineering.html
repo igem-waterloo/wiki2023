@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col">
+    <h1>Explore our project!</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-3">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/guarden.png" class="img-fluid">      
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-5"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='description') }}"
+        style="text-decoration: none; color: black">
+        Description
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='engineering') }}"
+      style="text-decoration: none; color: black">
+      Engineering
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='project-notebook') }}"
+      style="text-decoration: none; color: black">
+      Notebook
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-7">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/healthy-tomato.png" class="img-fluid"> 
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">DESIGN</h3>
+    <div class="mt-4 card bg-mint">
+      <p>
+      The thrip-vectored spread of viruses inspired the potential for a live bmRNAi vaccine delivery method: this involves spreadable exogenous bacteria, native to thrips and the plant leaf surface, to be engineered to release immune-inducing RNAi continuously (Goodfellow et al., 2019).
+      <br></br>
+      To apply directly to plant immunity, our choice of RNAi-mediating bacteria had to meet several criteria. First, they had to be a member of both the thrip and plant microbiomes. For widespread agricultural use, we focused on exogenous bacteria that could be potentially applied in liquid suspension as a spray innoculum. Secondly, these bacteria must be able to deliver RNAi. Though research is still being done on uptake mechanisms of RNAi, “naked RNA” applied to plant foliage has been proven as an effective delivery mechanism for application to infection-prone plants (Tabein et al., 2020). Furthermore, minicells are proposed to temporarily stabilize dsRNA based on research showing improved RNAi efficacy against fungal infection when RNAi was packaged in minicells (Islam et al., 2021).
+      <br></br>
+      For a complete scalable solution to our problem, our team identified engineered *Pseudomonas syringae* to align with the above criteria. *Pseudomonas* members inhabit both plants and thrips and have been successfully engineered to produce minicells (Farley et al., 2016; Gawande et al., 2019; Hirano & Upper, 2000). Moreover, a non-pathogenic *Pseudomonas syringae* strain set a precedent as the first genetically engineered bacteria released into the uncontrolled natural environment (Gawande et al., 2019). Due to the existing research supporting the efficacy of our chosen dsRNA sequence for TSWV immunity and minicells as an RNAi protection/secretion mechanism, our team used *E. coli* as an in-lab proof of concept organism (Goodfellow et al., 2019; Islam et al., 2021). This allowed a demonstration of the engineering process to modify wildtype gram-negative bacteria to produce TSWV-targeting RNAi, secreted via minicells. The chromosomal and plasmid-based recombination steps to the wildtype *E. coli* could be applied to other species, such as *Pseudomonas syringae*, in the future.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">RNA INTERFERENCE FOR PLANT COMMUNITY</h3>
+    <div class="mt-4">
+      <p>
+      Plants have evolved a variety of complex immune systems of defence. One in particular, chosen in our project for the protection against Tomato Spotted Wilt Virus (TSWV) is the RNA interference (RNAi) pathway.
+      <br></br>
+      RNA interference (RNAi) is an evolutionarily conserved response that recognizes foreign nuclear transcripts such as DNA and double-stranded RNA (Agrawal et al., 2003). As such, RNA interference provides an easy way to achieve targeted gene silencing for transcripts of viral origin (Röhl and Kurreck, 2005).  We take advantage of the intrinsic plant RNAi pathway, which involves first the recognition and cleavage of long foreign double-stranded RNA (dsRNA) into small interfering RNA (siRNA). These siRNA are of approximate length of 21-25 nt and are claved by RNAse III endonucleases such as Dicer and Drosha (Kim and Rossi, 2008). Next, siRNA becomes incorporated into the RNA-induced silencing complex (RISC), further degradating siRNA into single-stranded guide molecules that hybridizes with a specific target (Kim and Rossi, 2008). This leads to very effective gene expression silencing (ie. of virus replication), and was used in our project as basis to achieve plant immunity.
+      </p>
+    </div>
+    <div class="mt-4">
+      <h2 class="text-decoration-underline">WHY RNAi?</h2>
+      <div class="row mb-4">
+        <div class="col-1">
+          <h4 class="mt-3 rounded-circle mx-3 bg-dark-green text-center text-white">1.</h4>
+        </div>
+        <div class="col-7">
+          <h4 class="mb-3 fw-bold">Precision and Targeted Gene Silencing</h4>
+          <h4>With the use of intermolecular base pairing of cleaved dsRNA strands into siRNA, the existing pathway allows selectivity for conferring immunity of TSWV in tomato plants while minimizing off-target effects. The chosen pathway thus prevents interference with other essential plant genes.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <div class="row mb-4 justify-content-end">
+        <div class="col-1">
+          <h4 class="mt-3 rounded-circle mx-3 bg-dark-green text-center text-white">2.</h4>
+        </div>
+        <div class="col-7">
+          <h4 class="mb-3 fw-bold">Durability and Prolonged Protection</h4>
+          <h4>Previous research has shown effectiveness of viral TSWV nucleocapsid dsRNA transcripts to provide plant immunity for 40 days post infection (Tabein et al., 2020). This durability is crucial for long-term crop protection during the growing season, reducing the need for frequent reapplication or use of alternative treatments.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <div class="row mb-4">
+        <div class="col-1">
+          <h4 class="mt-3 rounded-circle mx-3 bg-dark-green text-center text-white">3.</h4>
+        </div>
+        <div class="col-7">
+          <h4 class="mb-3 fw-bold">Natural Defence Mechanism</h4>
+          <h4>The RNAi pathway is a natural defence mechanism in plants. Plants have evolved to recognize and respond to foreign genetic material like viral RNA. By harnessing this existing defense system, we are working with the plant's biology rather than introducing foreign chemicals or genes, making our approach more sustainable and environmentally friendly.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <div class="row mb-4 justify-content-end">
+        <div class="col-1">
+          <h4 class="mt-3 rounded-circle mx-3 bg-dark-green text-center text-white">4.</h4>
+        </div>
+        <div class="col-7">
+          <h4 class="mb-3 fw-bold">Symbiotic Bacteria Integration</h4>
+          <h4>Our project's unique aspect involves using symbiotic bacteria to produce and deliver the dsRNA transcripts. This choice enhances the feasibility of large-scale implementation in agricultural settings. Bacteria found within the microbiome of thrips and tomatoes chosen to be genetically engineered, can interact naturally, reducing the need for extensive human intervention and further minimizing environmental impact.</h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">ENGINEERING</h3>
+
+    <div class="mt-4">
+      <h2 class="text-decoration-underline text-center">Plasmid Design with T7 RNA Polymerase Expression System</h2>
+      <div class="row mb-4 justify-content-center">
+        <div class="col-10">
+          <h4>Our iGEM team’s dsRNA plasmid construct utilized the T7 expression system. This system is composed of three parts derived from the T7 bacteriophage: T7 RNA polymerase (T7 RNAP), T7 Promoter (T7P), and T7 Terminator (T7T). The T7P and T7T elements are contained within our RNAi producing constructed plasmid. The T7 RNAP is expressed with the Lambda Red operon, found on a separate plasmid vector, thus allowing our host organism to express the polymerase itself and complete the expression system. Our team selected this expression system for various reasons discussed below.
+          <br></br>
+          The bacteriophage T7 RNAP is a highly active enzyme that synthesizes RNA at a faster rate than *E. coli* RNAP, with less frequent transcription termination. This high-output enzyme generates a large amount of our target mRNA transcript (Tabor, 2001). The transcription done by T7 RNAP can circumnavigate a plasmid, causing the synthesized RNA to be several times the size of the original plasmid length.  Additional benefits of the T7 RNAP include the highly selective initiation process at its promoter sequences and the demonstrated resistance to antibiotics (such as rifampicin) that would normally inhibit the RNA polymerase of E. coli (Tabor, 2001).
+          <br></br>
+          There were various factors to consider when assessing the impact of the T7 expression system on our constructed plasmid. For instance, the T7 RNAP expression was located within a separate plasmid to minimize activity and reduce possible downstream effects on our constructed plasmid. Additionally, considerations had to be taken to ensure our plasmids were not competing for the same elements as the *E. coli* host organism. In essence, our constructed plasmid utilized the T7 expression system, while our T7 RNAP was used by a system derived from the host.
+          </h4>
+        </div>
+      </div>
+
+      <h2 class="text-decoration-underline text-center">Knockout Design with Lambda Red</h2>
+      <div class="row mb-4 justify-content-center">
+        <div class="col-10">
+          <h4>Our project utilizes Lambda Red homologous recombination technique whereby chromosomal DNA of *E.coli* can be modified, and in our case, used to remove and replace genes of interest, specifically the Min system operon and RNAse III with T7 RNA polymerase (RNAP) and antibiotic resistance. Our project first used an expression vector to introduce the Lambda red operon functionality into our wildtype *E.coli* cells. Next, PCR was used to design DNA segments. These segments contained reverse and forward primers of approximately 40 base pairs that were homologous to the target regions within *E. coli* transcriptome. The primers within the segments flanked cassettes which contained our desired gain-of function genes, which included antibiotic resistance, and in a separate plasmid, T7 RNAP, for the ability to express the polymerase. In using the recombination technique, our chassis was able to contain a ribonuclease III and MinCD knockout, to allow for production of minicells and better protection of our produced dsRNA.
+          </h4>
+        </div>
+      </div>
+    </div>
+
+<div class="mt-4">
+      <h2 class="text-decoration-underline text-center">Minicells for Delivery Mechanism</h2>
+      <div class="row mb-4">
+        <div class="col-4">
+          <div class="mb-4 card bg-dark-green text-white text-center">WHAT ARE MINICELLS?</div>
+        </div>
+        <div class="col-12">
+          <p>Minicells are tiny, spherical replicas of bacteria cells formed through binary fission and lack the ability to reproduce as they do not contain chromosomal DNA (Rang et al., 2018). They are beneficial as carriers for therapeutic delivery systems into eukaryotic cells (Kaval et al., 2014) and can be loaded with a variety of cargo such as dsRNA and siRNA (Macdiarmid and Brahmbhatt, 2011). As such, they provide a unique and promising RNA delivery method (Giacalone et al., 2006).
+          </p>
+        </div>
+        <div class="col-4">
+          <div class="mb-4 card bg-dark-green text-white text-center">WHAT IS THE MIN SYSTEM?</div>
+        </div>
+        <div class="col-12">
+          <p>The Min system consists of the MinC, MinD, and MinE proteins, and is responsible for the proper location of septum formation during binary fission of *E. Coli (*Farley et al., 2016). Bacterial mutants capable of producing minicells lack or have defective Min system proteins, as exploited in our project.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <p>
+        REFERENCES
+      </p>
+      <ul class="navbar-nav">
+        <li class="my-3 offset-1">Design</li>
+        <li class="my-2">Farley, M. M., Hu, B., Margolin, W., & Liu, J. (2016). Minicells, Back in Fashion. Journal of bacteriology, 198(8), 1186–1195. https://doi.org/10.1128/JB.00901-15</li>
+        <li class="my-2">Gawande, S. J., Anandhan, S., Ingle, A., Roylawar, P., Khandagale, K., Gawai, T., Jacobson, A., Asokan, R., & Singh, M. (2019). Microbiome profiling of the onion thrips, Thrips tabaci Lindeman (Thysanoptera: Thripidae). PloS one, 14(9), e0223281. https://doi.org/10.1371/journal.pone.0223281</li>
+        <li class="my-2">Goodfellow, S., Zhang, D., Wang, M. B., & Zhang, R. (2019). Bacterium-Mediated RNA Interference: Potential Application in Plant Protection. Plants (Basel, Switzerland), 8(12), 572. https://doi.org/10.3390/plants8120572</li>
+        <li class="my-1">Hirano, S. S., & Upper, C. D. (2000). Bacteria in the leaf ecosystem with emphasis on Pseudomonas syringae-a pathogen, ice nucleus, and epiphyte. Microbiology and molecular biology reviews : MMBR, 64(3), 624–653. https://doi.org/10.1128/MMBR.64.3.624-653.2000</li>
+        <li class="my-2">Islam, M. T., Davis, Z., Chen, L., Englaender, J., Zomorodi, S., Frank, J., Bartlett, K., Somers, E., Carballo, S. M., Kester, M., Shakeel, A., Pourtaheri, P., & Sherif, S. M. (2021). Minicell‐based fungal rnai Delivery for Sustainable Crop Protection. Microbial Biotechnology, 14(4), 1847–1856. https://doi.org/10.1111/1751-7915.13699</li>
+        <li class="my-2">Tabein, S., Jansen, M., Noris, E., Vaira, A. M., Marian, D., Behjatnia, S. A., Accotto, G. P., & Miozzi, L. (2020). The induction of an effective dsrna-mediated resistance against tomato spotted wilt virus by exogenous application of double-stranded RNA largely depends on the selection of the viral RNA target region. Frontiers in Plant Science, 11. https://doi.org/10.3389/fpls.2020.533338.</li>
+
+        <li class="my-3 offset-1">RNA interference for Plant Immunity</li>
+        <li class="my-2">Agrawal, N., Dasaradhi, P.V., Mohmmed, A., Malhotra, P., Bhatnager, R.K., Mukherjee, S.K. (2003). RNA interference: biology, mechanism, and applications. Microbiol Mol Biol Rev, 67 (4), 657-685. https://doi.org/0.1128/MMBR.67.4.657-685.2003.</li>
+        <li class="my-2">Arias, C., Déctor, M., Segovia, L., López, T., Camacho, M., Iša, P., Espinosa, R., and López, S. (2004). RNA silencing of rotavirus gene expression. Virus Research, 102, 43 - 51. https://doi.org/10.1016/j.virusres.2004.01.014.</li>
+        <li class="my-2">Kim, D., and Rossi, J. (2008) RNAi mechniasms and applications. Biotechniques, 44 (5), 6130616. https://doi.org/10.2144/000112792.</li>
+        <li class="my-1">Röhl, T., and Kurreck, J. (2005). RNA interference in pain research. Journal of Neurochemistry, 99. https://doi.org/10.1111/j.1471-4159.2006.04082.x.</li>
+        <li class="my-2">Tabein, S., Jansen, M., Noris, E., Vaira, A.M., Marian, D., Behjatnia, S.A., Accotto, G.P., Miozzi, L. (2020). The Induction of an Effective dsRNA-Mediated Resistance Against Tomato Spotted Wilt Virus by Exogenous Application of Double-Stranded RNA Largely Depends on the Selection of the Viral RNA Target Region. Frontiers in Plant Science, Vol 11. https://doi.org/10.3389/fpls.2020.533338.</li>
+
+        <li class="my-3 offset-1">Engineering</li>
+        <li class="my-2">Tabor, S. (2001). Expression using the T7 RNA polymerase/promoter system. Curr Protoc Mol Biol, 16 https://doi.org/10.1002/0471142727.mb1602s11.</li>
+        <li class="my-2">Rang, C., Proenca, A., Buetz, C., Shi, C., and Chao, L. (2018). Minicells as a Damage Disposal Mechanism in Escherichia coli. mSphere, 3. https://doi.org/10.1128/mSphere.00428-18</li>
+        <li class="my-2">Macdiarmid, J., and Brahmbhatt, H. (2011). Minicells: versatile vectors for targeted drug or si/shRNA cancer therapy. Current opinion in biotechnology, 22 6, 909-16. https://doi.org/10.1016/j.copbio.2011.04.008.</li>
+        <li class="my-1">Kaval, K., Rismondo, J., and Halbedel, S. (2014). A function of DivIVA in Listeria monocytogenes division site selection. Molecular Microbiology, 94. https://doi.org/10.1111/mmi.12784.</li>
+        <li class="my-2">Giacalone, M., Gentile, A., Lovitt, B., Xu, T., Surber, M., and Sabbadini, R. (2006). The use of bacterial minicells to transfer plasmid DNA to eukaryotic cells. Cellular Microbiology, 8. https://doi.org/10.1111/j.1462-5822.2006.00737.x.</li>
+        <li class="my-2">Farley, M.M., Hu, B., Margolin, W., Liu, J. (2016). Minicells, Back in Fashion. J. Bacteriol, 198(8), 1186-1195. https://doi.org/0.1128/JB.00901-15.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

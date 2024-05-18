@@ -1,0 +1,50 @@
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-mint text-dark">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mb-3">Project</h4>
+        <ul class="m-2 p-2 footer ul">
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='project-notebook') }}">Notebook</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Team</h4>
+        <ul class="m-2 p-2 footer ul">
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Our Team</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+          <!-- <li><a class="dropdown-item" href="#">Collaborations</a></li>
+          <li><a class="dropdown-item" href="#">Partnership</a></li>
+          <li><a class="dropdown-item" href="#">Our Contribution</a></li>
+          <li><a class="dropdown-item" href="#">Awards</a></li> -->
+        </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Human Practices</h4>
+        <ul class="m-2 p-2 footer ul">
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='hp-problem') }}">Defining the Problem</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='hp-thrip') }}">The Thrip</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='hp-solution') }}">Our Solution</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Awards</h4>
+        <ul class="m-2 p-2 footer ul">
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Integrated Human Practices</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2023 - Content on this site is licensed under a <a class="subfoot text-dark" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p><small>The repository used to create this website is available at <a class="text-dark" href="https://gitlab.igem.org/2023/waterloo">gitlab.igem.org/2023/waterloo</a>.</small></p>
+      </div>
+    </div>
+  </div>
+</footer>

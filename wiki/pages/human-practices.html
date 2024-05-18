@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="text-decoration-underline">Human Practices</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-4"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='project-description') }}"
+        style="text-decoration: none; color: black">
+        Human Practices
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-problem') }}"
+      style="text-decoration: none; color: black">
+      Defining the Problem
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-thrip') }}"
+      style="text-decoration: none; color: black">
+      The Thrip
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-solution') }}"
+      style="text-decoration: none; color: black">
+      Our Solution
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid">
+      </div>
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid translate-middle-x-flipped">
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <img src="https://static.igem.wiki/teams/4704/wiki/SDG_Poster.png" class="img-fluid">
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="fw-bold text-center text-dark-green">PROJECT IDEATION</h1>
+    <div class="mt-4">
+      <h3 class="text-center">
+      This product is meant to be used by the public. The main stakeholders using the product are farmers and suppliers. They will use this product to decrease the spread and help eradicate TSWV in their tomato plants as well as other plants that are affected by this virus. Other users could be homeowners. They could use this product in their own personal gardens so that they can reduce the use of pesticides in their plants. Grocery and gardening stores could sell this product so that it is more accessible to everyone in the community.
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <h1 class="fw-bold text-center text-dark-green">Integrated Human Practices</h1>
+  <div class="col col-flex">
+    <div class="mt-4">
+      <h3 class="text-center">
+      By tackling a critical agricultural issue and advocating for more ethical and sustainable farming methods, our project idea has a positive influence on society. Through stakeholder participation and ethical concerns, society in turn affects our project. Our project's goal, design, and laboratory experimentation options have all been influenced by ethical considerations regarding the environment's impact, food security, and pesticide usage. The direction and goals of our project have been shaped through stakeholder engagements with farmers and the general public, who have contributed insightful observations and input, such as a wider variety of viruses that affect tomatoes, as well as the affects the tomato market sees when an outbreak occurs.. This input was crucial to our work, ensuring that our project is responsive to problems in the real world and in line with society ideals and demands. It strengthens our resolve to advance ethical synthetic biology solutions for the good of both agriculture and society at large.
+      <br></br>
+      During the creation of our project, through communication with stakeholders, it was determined that many greenhouse tomato farmers in Ontario have not faced TSWV as an issue. However, other diseases such as Tomato Brown Rugose Fruit Virus have run rampant in recent years (M. Condoluci, personal communication, July 1, 2023). Due to this finding, our project direction was changed to find a system that we hope could be implemented against a variety of viruses through changing the sequence of interest. By creating a mini-cell production pathway within bacteria, we theorize that this system will allow for the implementation of RNAi against a variety of viruses, with each being targeted through its specific DNA sequence. In response to stakeholder feedback from farmers about the rising costs of pesticides and herbicides, our project aimed to produce a model that would allow for a single time spray, with the bacteria secreting minicells over its lifespan, allowing for farmers to save money by reducing the number of times crops must be sprayed.
+      </h3>
+    </div>
+    <div class="mt-4">
+      <img src="https://static.igem.wiki/teams/4704/wiki/sdg.png" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <div class="mt-4">
+      <p>
+        REFERENCES
+      </p>
+      <ul class="navbar-nav">
+        <li class="my-2">APSnet. (n.d.). Plant disease 1990: Introduction of the tomato spotted wilt virus and western flower thrips complex into field vegetables in Ontario, Canada. Plant Disease Back Issue Abstracts. https://www.apsnet.org/publications/PlantDisease/BackIssues/Documents/1990Abstracts/PD_74_81B.htm</li>
+        <li class="my-2">Bitterlich, I., & MacDonald, L. S. (1993). The Prevalence of tomato spotted wilt virus in weeds and crops in southwestern British Columbia. Canadian Plant Disease Survey, 73(2), 137–142.http://phytopath.ca/wp-content/uploads/2014/10/cpds-archive/vol73/CPDS_Vol_73_No_2_(137-142)1993.pdf</li>
+        <li class="my-2">British Columbia Ministry of Agriculture. (2017). Environmental Protection and Pesticides. https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/agriculture-and-seafood/animal-and-crops/plant-health/environmental-protection-and-pesticides.pdf</li>
+        <li class="my-1">Esquer, N. (2018). U.S. economy gets $4.8 billion boost from tomatoes, new study shows. Chamber Business News. https://chamberbusinessnews.com/2018/11/20/u-s-economy-gets-4-8-billion-boost-from-tomatoes-new-study-shows/</li>
+        <li class="my-2">FDA. (2022). Why Do Farmers in the U.S. Grow GMO Crops? https://www.fda.gov/food/agricultural-biotechnology/why-do-farmers-us-grow-gmo-crops</li>
+        <li class="my-2">Health Canada (2015). Sustainable Pest Management. Government of Canada. https://www.canada.ca/en/health-canada/services/consumer-product-safety/pesticides-pest-management/growers-commercial-users/sustainable-pest-management.html</li>
+        <li class="my-2">Health Canada (2020). 2019-2020 RCC Work Plan: Pesticides. Government of Canada. https://www.canada.ca/en/health-canada/corporate/about-health-canada/legislation-guidelines/acts-regulations/canada-united-states-regulatory-cooperation-council/work-plan-crop-protection-2019-2020.html</li>
+        <li class="my-2">Health Canada (2022). Pesticides and Food Safety. Government of Canada. https://www.canada.ca/en/health-canada/services/about-pesticides/pesticides-food-safety.html</li>
+        <li class="my-2">Gao, Y., Lei, Z., & Reitz, S. R. (2012). Western flower thrips resistance to insecticides: detection, mechanisms and management strategies. Pest Management Science, 68(8), 1111–1121. https://doi.org/https://doi-org.proxy.lib.uwaterloo.ca/10.1002/ps.3305</li>
+        <li class="my-2">Hoopes, C. (2012). Integrated Pest Management: Prevention, Chemical, Cultural, Biological - Bugwoodwiki. Bugwood Wiki. https://wiki.bugwood.org/</li>
+        <li class="my-2">Integrated_Pest_Management:_Prevention,_Chemical,_Cultural,_Biological
+Jackson, G. (n.d.). Tomato Spotted Wilt (481). Pacific Pests, Pathogens, Weeds & Pesticides. https://apps.lucidcentral.org/pppw_v11/text/web_full/entities/tomato_spotted_wilt_481.htm</li>
+        <li class="my-2">Murphy, G., Ferguson, G., & Shipp, L. (2022). Thrips in greenhouse crops - biology, damage and management. Ontario. https://www.ontario.ca/page/thrips-greenhouse-crops-biology-damage-and-management#section-3</li>
+        <li class="my-2">Reitz, S. R., Gao, Y., Kirk, W. D. J., Hoddle, M. S., Leiss, K. A., & Funderbunk, J. E. (2020). Invasion Biology, Ecology, and Management of Western Flower Thrips. Annual Review of Entomology, 65, 17–37. https://doi.org/https://doi.org/10.1146/annurev-ento-011019024947</li>
+        <li class="my-2">Reitz, S. R. (2012). Western flower thrips resistance to insecticides: detection, mechanisms and management strategies. PubMed. https://pubmed.ncbi.nlm.nih.gov/22566175/</li>
+        <li class="my-2">Riley, D., Srinivasan, R., Joseph, S. V., & Diffie, S. (n.d.). Thrips vectors. Thrips Vectors - USDA RAMP Project | Tomato Spotted Wilt Virus. https://tswv.caes.uga.edu/usda-ramp-project/thrips-vectors.html</li>
+        <li class="my-2">Sideman, R. (2022). Tomato Spotted Wilt Virus (TSWV): a virus you should know and be able to identify! UNH Extension. https://extension.unh.edu/blog/2022/02/tomato-spotted-wilt-virus-tswv-virus-you-should-know-be-able-identify</li>
+        <li class="my-2">Statistics Canada. (2021). Canadian Tomatoes, from farm to fork. https://www150.statcan.gc.ca/n1/pub/11-627-m/11-627-m2021038-eng.htm
+United Nations. (n.d.). The 17 goals | sustainable development. United Nations. https://sdgs.un.org/goals</li>
+        <li class="my-2">University of Georgia. (2017). Commercial Tomato Production Handbook. University of Georgia Extension . https://extension.uga.edu/publications/detail.html?number=B1312&title=commercial-tomato-production-handbook</li>
+        <li class="my-2">United States Environmental Protection Agency. (2023). What is a Pesticide?. https://www.epa.gov/minimum-risk-pesticides/what-pesticide
+Wick, R.L. (2019). Impatiens Necrotic Spot Virus and Tomato Spotted Wilt Virus. UMass Extension. https://ag.umass.edu/greenhouse-floriculture/fact-sheets/impatiens-necrotic-spot-virus-tomato-spotted-wilt-virus</li>
+        <li class="my-2">Yıldıztekin, M., Özler, M. A., Nadeem, S., & Tuna, A. L. (2019). Investigations on the effects of commonly used pesticides on tomato plant growth.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

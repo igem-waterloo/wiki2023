@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="text-decoration-underline">Human Practices</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-4"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='human-practices') }}"
+        style="text-decoration: none; color: black">
+        Human Practices
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-problem') }}"
+      style="text-decoration: none; color: black">
+      Defining the Problem
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-thrip') }}"
+      style="text-decoration: none; color: black">
+      The Thrip
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-solution') }}"
+      style="text-decoration: none; color: black">
+      Our Solution
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid">
+      </div>
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid translate-middle-x-flipped">
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">OUR SOLUTION</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>
+      Tomato pesticides are readily available for at home growers from stores like Canadian Tire, which usually have potassium salts of fatty acids (also known as insecticidal soap) as their main active ingredient. Industry standard pesticides may also use this or other ingredients such as, Bacillus thuringiensis, pyrethrin, spinosad, neem oil, cyfluthrin, and more (The best insecticide for Tomato Plants 2023). It is generally safe to use pesticides on tomatoes, however a study found that the “use of high amounts of pesticides adversely affects the physiological and biochemical properties of tomato plants” (Yıldıztekin, 2019).
+      <br></br>
+      Health Canada has several safety measures both regarding the use of pesticides in Canada as well as safe food handling. The Pest Management Regulatory Agency (PMRA) works with several stakeholders to enforce safe pest management policies according to the Pest Control Products Act (PCPA) on behalf of the Ministry of Health (Health Canada, 2015). The PMRA also works with the US Environmental Protection Agency (EPA) through the OECD Expert Group on identifying environmental effects of RNAi pesticides, which are still a relatively new category of pesticides (Health Canada, 2020). Registration of new pesticides under the PCPA requires the pesticides to be deemed acceptable for a specific use after thorough examination by scientists at Health Canada (Health Canada, 2022). To be deemed acceptable, pesticides in Canada are inspected for the amount of pesticide residue that remains on produce after a pesticide has been used (Health Canada, 2022). This amount of residue must be below the Maximum Residue Level (MRL), an amount that is greatly below the amount that would pose a health risk to any individuals (Health Canada, 2022). Canadians that use pesticides may only use pesticides for the uses that are approved by the federal government (Health Canada, 2022).
+      <br></br>
+      Gaurden focuses on creating a solution to the spread of TSWV through the introduction of modified bacteria that are known members of the tomato’s microbiome. This introduction of bacteria which have been modified to produce mini-cells containing RNAi to interrupt the infection of TSWV within the plant reduces the need for pesticide use. Western Flower Thrips have shown intolerance to a wide variety of insecticides, with 153 documented cases of resistance as of 2012 (Gao et al., 2012). The thrip population continues to evolve new resistances quickly due to their quick generation time (Gao et al., 2012). This resistance to insecticides creates difficulty in preventing TSWV spread through the thrips as a vector. Instead, we have chosen to focus on preventing the effects of the virus upon transmission to the plant.
+      <br></br>
+      The definition of a pesticide is a substance or mixture of substances used to destroy or mitigate any pest. It can also be used as a plant regulator to prevent it from wilting. Based on this information, our solution is not a pesticide because it incorporates the use of altering RNAi strands to eradicate TSWV. Our solution is similar to a GMO, as we genetically modify bacteria that is natural to the plant’s biome in order for the plant to protect itself from thrips. The mode of implementing this solution is through a spray that would coat the plants, allowing the modified bacteria to be added to the plant’s microbiome (United States Environmental Protection Agency, 2023). GMOs are a better method to protect crops because they allow farmers to decrease their use of pesticides for their crops, do less damage to the environment, and save money (FDA, 2022).
+      <br></br>
+      Currently, farmers are using pesticides to control thrips since they carry INSV and TSWV. This solution has various problems considering their contributions to pollution and negative effects on their surrounding environment (e.g. birds, fish, etc.) (British Columbia Ministry of Agriculture, 2017). Another issue is documented pesticide resistance within thrips. The biological attributes of thrips allows it to resist most classes of insecticides hence rendering many pesticides useless against it. Insecticide Resistance Management (IRM)  programs have suggested using non-insecticidal tactics such as biological and cultural controls (Reitz, 2012). This can include controlled burning, revegetation, or using insects or fungi that counteract the pest (Hoopes, 2012). Another suggestion was increasing host plant resistance (Sideman, 2022). Waterloo’s solution to this problem is to use siRNA to silence the strands of RNA that would cause the plant to decay and die. This increases the plants resistance to the viruses that thrips carry while minimally impacting the environment. Therefore less herbicides need to be used to control the spread of thrips themselves since thrips will no longer have an effect on the crops. We propose that this solution may also be altered to combat INSV as well. INSV is from the same family of viruses as TSWV, called tospoviruses, and both can be spread by thrips (Wick, 2019). Since both viruses are similar to each other, the siRNA can be programmed to target INSV along with TSWV, therefore reducing the losses that farmers suffer from both these viruses.
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">STAKEHOLDERS</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>
+      When considering the agricultural sector of any economy, there are key stakeholders whose views and values must be understood to ensure that the proposed solution fits within the true context of the problem. These stakeholders include farmers, regulatory entities, and consumers themselves. To aid in understanding the whole picture, our team reached out to multiple farmers and regulatory entities to understand their take on pesticides, tomatoes and TSWV.
+      </h3>
+    </div>
+    <div class="mt-4 card bg-mint">
+      <p>
+      Agriculture is an industry that affects all Canadians and all people worldwide. In recent years, Canada has seen food shortages such as a lettuce shortage, among other crops. Initially, our interest was piqued by the lettuce shortages recorded in recent years, causing our team to learn about the family of viruses that includes Tomato Spotted Wilt Virus (TSWV) and Impatiens Necrotic Spot Virus, both of which affect lettuce, tomatoes, and almost a hundred other crops.
+      </p>
+    </div>
+    <div class="mt-4 card bg-mint">
+      <h3 class="fw-bold text-dark-green">Public Opinion</h3>
+      <p>
+      When considering the agricultural sector of any economy, there are key stakeholders whose views and values must be understood to ensure that the proposed solution fits within the true context of the problem. These stakeholders include farmers, regulatory entities, and consumers themselves. To aid in understanding the whole picture, our team reached out to multiple farmers and regulatory entities to understand their take on pesticides, tomatoes and TSWV.
+      </p>
+    </div>
+
+    <div class="mt-4 card bg-mint">
+      <h3 class="fw-bold text-dark-green">Survey</h3>
+      <img src="https://static.igem.wiki/teams/4704/wiki/survey-1.png" class="img-fluid">
+      <img src="https://static.igem.wiki/teams/4704/wiki/survey-2.png" class="img-fluid">
+      <img src="https://static.igem.wiki/teams/4704/wiki/survey-3.png" class="img-fluid">
+    </div>
+
+    <div class="mt-4 card bg-mint">
+      <h3 class="fw-bold text-dark-green">Survey Results</h3>
+      <img src="https://static.igem.wiki/teams/4704/wiki/survey-response.png" class="img-fluid">
+      <p class="mt-4">
+      When choosing which tomatoes to buy, participants stated that the colour, size, smell, firmness and overall look of the tomato impacted their buying habits. One participant stated “I try to buy tomatoes that have limited bruises/blemishes. Also, I usually buy firmer tomatoes rather than squishy ones.” However, for other participants, cost is the main determining factor. One stated, “Typically whatever is cheapest however, sometimes I’ll buy the tomatoes that come on vines if I’m feeling fancy.”
+      <br></br>
+      When asked about the growing conditions or methods of the tomatoes they are buying, the majority of participants, 75%, stated that the growing conditions do not affect their buying habits. The other 25% agreed that unprocessed or organic tomatoes were the way to go. One stated, “Prefer that the tomatoes are as unprocessed as possible (no pesticides, tomatoes should be organic).”
+      <br></br>
+      As suspected, participants all agreed that the price of tomatoes has increased in recent years. However, despite the price increase, the participants agreed that not much else has changed. For example, one participant stated, “Price has gone up but quality doesn't seem to have changed much.”
+      <br></br>
+      Lastly, when asked about their knowledge of viruses or disease affecting tomato growth, all participants were unaware of such viruses.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

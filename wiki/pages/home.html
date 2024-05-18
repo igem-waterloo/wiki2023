@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col">
+    <h1>Explore our project!</h1>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <div class="col col-3">
+    <div class="row mt-4 justify-content-center">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/guarden.png" class="img-fluid">      
+      </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+      <button style="max-width: 250px; border: none; padding: 8px 18px 8px 18px; border-radius: 15px; background-color: #D9D9D9">
+        <a style="text-decoration: none; color: black" href="{{ url_for('pages', page='description') }}">view project</a>
+      </button>
+    </div>
+  </div>
+  <div class="col col-3">
+    <div class="mt-4 mb-4 text-center">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/healthy-tomato.png" class="img-fluid"> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <div class="mt-4 fw-bold">
+      <p>
+      Tomato Spotted Wilt Virus (TSWV) poses a significant challenge to tomato production, with current methods proving ineffective.
+      <br></br>
+      Chemical pesticides are unable to combat the virus's ability to rapidly develop resistance to these chemicals.
+      <br></br>
+      The use of resistant tomato cultivars has provided only partial protection, as TSWV can overcome plant resistance mechanisms through mutation.
+      <br></br>
+      These limitations highlight the pressing need for innovative and more sustainable approaches.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <div class="col col-5">
+    <!--images here-->
+  </div>
+  <div class="col col-flex">
+    <h2 class="text-dark-green fw-bold mb-5">PROJECT OVERVIEW</h2>
+    <div class="mt-5 text-center">
+      <h3>
+      Guarden's involves the development of a bacterially-mediated RNA interference (RNAi) mechanism to tackle Tomato Spotted Wilt Virus (TSWV).
+      <br></br>
+      This innovative approach aims to harness RNAi to interfere with the replication and expression of TSWV genes in tomato plants, ultimately conferring a fortified defense system against the virus, thus mitigating its negative effects on tomato crops.
+      </h3>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

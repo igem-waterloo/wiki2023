@@ -1,0 +1,534 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="text-decoration-underline">Awards</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-5"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='education') }}"
+        style="text-decoration: none; color: black">
+        Education
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='human-practices') }}"
+      style="text-decoration: none; color: black">
+      Integrated Human Practices
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='model') }}"
+      style="text-decoration: none; color: black">
+      Model
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-7">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/dna.png" class="img-fluid"> 
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">Bacterial Dynamics</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>Introduction</h3>
+      <h3>
+      To confer immunity to Tomato Spotted Wilt Virus (TSWV), the bacteria must first proliferate, and survive for long enough in the microbiome to produce an adequate amount of minicells and siRNA products. Therefore, understanding the growth and colonization of bacteria on plant leaves is fundamental in determining the success of immunization against TSWV.
+      <br></br>
+      The purpose of the following mathematical model is to understand the growth and survival of bacterial populations on tomato leaves.
+      <br></br>
+      Since it is a well-studied bacteria, Escherichia coli (E. coli) was chosen as the proof of concept bacterial host. The behavior of this model organism in the phyllosphere, specifically tomato plant leaves, was modeled to discern the effectiveness of this solution. The models indicate that the method is feasible for E. coli, and should therefore be more successful for non-pathogenic bacteria known to commonly inhabit the phyllosphere. 
+      <br></br>
+      The following model analyzes the growth of the inoculated bacteria across approximately 12 hours. A logistic model was used in determining the population growth of E. coli.
+      <br></br>
+      Population Dynamics</h3>
+      <h3>
+      The dynamics of bacterial growth are complex, and interactions within the host organism can introduce additional complexities. This introduced challenges in using a stochastic model, as there is limited data that accurately captures the variability in bacterial growth. Models including microscale interactions are usually useful in very specific scenarios.
+      <br></br>
+      Hence a deterministic model seemed like the more appropriate choice. The known parameters of E. coli and initial conditions have been well researched and are easier to measure, allowing the model to provide a more accurate representation.
+      <br></br>
+      A logistic model, based on the work of Fujikawa & Morozumi (2004), was used to simulate the growth of the bacteria. It includes similar growth curves to the Baryani model and accurately describes the growth curves at dynamic temperatures.
+      <br></br>
+      It is written in a differential equation form as follows part of the work of Fujikawa & Morozumi (2004):
+      </h3>
+      <img src="https://static.igem.wiki/teams/4704/wiki/equation.png" class="img-fluid">
+      <h3>
+      This model is useful in our context as it addresses constraints in the growth of a population, given by limited space, nutrients and other resources. The growth curves shown by the model have been experimentally observed numerous times, so there is a very high probability that the growth of e coli will match a logistic model.
+      <br></br>
+      The parameters and plot of the model are discussed under the functionality section.
+      <br></br>
+      Models (Functionality)
+      </h3>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>N<sub>0</sub></td>
+            <td>Inoculum size (cfu/ml)</td>
+          </tr>
+          <tr>
+            <td>r</td>
+            <td>Growth rate (1/hr)</td>
+          </tr>
+          <tr>
+            <td >t</td>
+            <td>Incubation time</td>
+          </tr>
+          <tr>
+            <td>N<sub>Max</sub></td>
+            <td>Maximum cell population at stationary phase</td>
+          </tr>
+          <tr>
+            <td>N<sub>Min</sub></td>
+            <td>Minimum population (1ppm smaller than N<sub>0</sub>)</td>
+          </tr>
+          <tr>
+            <td>c</td>
+            <td>Adjustment factor</td>
+          </tr>
+          <tr>
+            <th scope="row">Output</th>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>N</td>
+            <td>Cell count</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/figure.png" class="img-fluid">      
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Values</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>r</td>
+            <td>2.10</td>
+          </tr>
+          <tr>
+            <td>c</td>
+            <td>0.69</td>
+          </tr>
+          <tr>
+            <td>N<sub>0</sub></td>
+            <td>10<sup>3.00</sup></td>
+          </tr>
+          <tr>
+            <td>N<sub>Max</sub></td>
+            <td>10<sup>8.90</sup></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>
+      The cell population growth of e coli based on the initial parameters as taken from Fujikawa & Morozumi (2004). The literature values provide a good reference of the growth of e coli in general situations, hence the phases of growth will more or less match the timeframe of the simulation.
+      <br></br>
+      Hours 1 to 6 show the lag phase, hours 6 to 10 show the exponential growth phase, and hours 10 to 12 show the stationary phase.
+      <br></br>
+      It is important to note that after the 12 hour period, the death phase will start occuring. Even by varying the input parameters (which should be a very small change due to the literature backing up the values), the time periods will experience a very small variation in time.
+      <br></br>
+      Models (Comments)
+      </h3><h3>
+      There are some factors that the model fails to include, yet literature reassures us that the model still remains valid.
+      <br></br>
+      (i) The nutrient availability of tomato leaves play an important role in determining the growth curve of E. coli (Nev et al., 2021).
+      <br></br>
+      Our model has a limitation, as in it fails to include the nutrient availability on the leaf’s surface as part of the cell count growth. Essentially, if the leaf’s surface contains a minimal amount of available nutrients, our model will become invalid. But the threshold for the model is very low, and moreover Nev et al. adds that a decrease in the nutrient concentration would significantly impact the rate of growth of the bacteria. But luckily, the time span of the model is short enough that this issue can be overlooked.
+      <br></br>
+      E. coli have been shown to inhabit external, nonhost environments following transfer from animal and human sources. Although the nutrient availability in tomato leaves is low, E. coli populations can survive in non-host environments from days to multiple weeks (Williams et al., 2013). For example, E. coli populations survived for approximately 7 days in lettuce’s phyllosphere. However, due to the low nutrient availability and due to competition from other microbes, E. coli populations tend to rapidly decline over time following the first few days.
+      <br></br>
+      Therefore, E. coli have sufficient nutrients available to survive for at least 12 hours in the phyllosphere, as this model posits.
+      <br></br>
+      (ii) Another important factor is that at smaller surface areas, where nutrient uptake isn’t high enough to be considered an issue, the logistic model can include an additional variable for the surface area as a scaling component (Kale et al., 2022). It is also important to add that the model works at a dynamic temperature, and the time periods do not experience a large enough change that the above points become problematic. Hence this proof of concept should be feasible in different climates where the temperature varies, though other weather factors have not been accounted for here.
+      <br></br>
+      Conclusion
+      </h3><h3>
+      While some strengths of the logistic model include the growth of the bacteria under constraints (which in this case is the leaf surface of the tomato plant), it also makes use of some assumptions such as constant nutrient availability, constant weather conditions and no competition which could lead to the model being invalidated. But literature has shown that the cell count of the E. coli will generally enter its ‘death phase’ after a span of days. The model reassures us that the stationary phase begins at around the 12 hour mark, which in practice should be enough time for the purpose of this project. Hence any destabilization of the population can occur after this time, and it will not affect the feasibility of the project in any major way.
+      <br></br>
+      Thus the model indicates that the bacteria will be able to survive for long enough to produce the appropriate siRNA products. Other bacterial hosts, such as those from the Pseudomonas or Erwinia genus, which more commonly colonize the plant leaf microbiome will be able to survive for longer than E. coli. Therefore, all of this information reassures us that E. coli has been an appropriate choice as a proof of concept for this project.
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">Viral Dynamics</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>Introduction</h3>
+      <h3>The interaction between herbivores acting as vectors and pathogens they carry can lead to significant behavioral changes that impact pathogen replication and spread. In the case of Tomato Spotted Wilt Virus (TSWV) and its vector, Frankliniella occidentalis (F. occidentalis), these changes include altered behavior, improved fitness, and reduced development time in the vector. Understanding these dynamics is crucial as they influence disease transmission.
+      <br></br>
+      A deterministic model that specifically analyzes TSWV disease dynamics in the context of F. occidentalis was used. The model highlights the significance of TSWV-induced changes in F. occidentalis' biology, such as life expectancy and preferential behavior, and their implications for disease spread. By examining these factors, the model sheds light on the intricate relationship between the virus and its vector, providing valuable insights for disease management and control strategies.
+      <br></br>
+      The Model
+      </h3><h3>
+      The model considers how TSWV affects F. occidentalis, including preferential behavior, development, and survival. It analyzes two scenarios: TSWV-infected (I) and healthy (H) host plants. F. occidentalis adults fall into three categories: Healthy (AN), Infected (AI), and Transmitter (AT). To unravel this complexity, we employ a deterministic model using differential equations, allowing us to explore how different developmental classes of F. occidentalis interact in the context of TSWV transmission.
+      <br></br>
+      The following assumptions were made:
+      <ol>
+        <li>Virus transmission depends on transmitter vectors and healthy host plants.</li>
+        <li>Virus acquisition occurs through feeding on infected host plants.</li>
+        <li>Feeding stages: L1, L2, and adult; pre-pupa and pupa stages don't feed.</li>
+        <li>Only L1 from infected plants can become transmitters as adults.</li>
+        <li>L2 and adults can acquire the virus but not transmit it.</li>
+        <li>Larval stages (L1 and L2) are mobile but stay on the hatched plant.</li>
+        <li>Pre-pupae and pupae are immobile, non-feeding, and off the plant.</li>
+        <li>Virus replication happens inside the vector and is transmitted transstadially.</li>
+        <li>Adults move between plants, facilitating virus spread.</li>
+        <li>Transovarial transmission is not possible.</li>
+        <li>Exposure to the virus enhances fitness when feeding on healthy plants.</li>
+        <li>Adult preference for host plants depends on their infection status: infected/transmitter adults prefer healthy plants, while healthy adults prefer infected plants.</li>
+      </ol>
+      Each development stage of thrips contains a system of equations modeling the population change in that stage. 
+      <br></br>
+      Eggs: 
+      <br></br>
+      Healthy Plants 
+      </h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/egg-healthy.png" class="img-fluid">      
+      </div>
+      <h3>Infected Plants</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/egg-unhealthy.png" class="img-fluid">      
+      </div>
+
+      <h3>Larvae:</h3>
+      <h3>In the dynamics of larvae 1:L1 emerging from eggs on infected plants automatically become "transmitters" by feeding on infected plants, a critical stage for transmission. Conversely, those emerging from eggs on healthy host plants are labeled "healthy" as they feed on uninfected plants.
+      <br></br>
+      However, if transmitter adults lay eggs on healthy plants due to preferential behavior, TSWV transmission can occur during egg laying. This transforms healthy plants into infected ones, and subsequently, the emerging L1 from these newly infected hosts also assume the role of "transmitters."
+      <br></br>
+      Healthy Plants
+      </h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/larvae-healthy.png" class="img-fluid">      
+      </div>
+      <h3>Infected Plants</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/larvae-unhealthy.png" class="img-fluid">      
+      </div>
+
+      <h3>
+      Larvae 2 dynamics are given by:
+      <br></br>
+      Healthy Plants
+      </h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/larvae-2-healthy.png" class="img-fluid">      
+      </div>
+      <h3>Infected Plants</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/larvae-2-unhealthy-1.png" class="img-fluid">      
+        <img src="https://static.igem.wiki/teams/4704/wiki/larvae-2-unhealthy-2.png" class="img-fluid">      
+      </div>
+
+      <h3>Pupae dynamics are given by:</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/pupae.png" class="img-fluid">      
+      </div>
+
+      <h3>Adult dynamics are given by:</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/adult.png" class="img-fluid">      
+      </div>
+
+      <h3>
+      The deterministic model consists of a system of differential equations solved using the Scipy package’s solve_ivp() function. The RK45 solver was specified for appropriate stiffness.
+      <br></br>
+      Conclusion
+      </h3><h3>
+      The model generates six graphs that offer comparisons of thrip populations at various developmental stages in both healthy and unhealthy plants. Of particular significance is the analysis of adult thrips, given their crucial role as transmitters of the virus. Within the initial 100 days following the introduction of the virus, a noticeable trend emerges: there is a clear and rapid exponential growth in the population of thrips. This growth pattern underscores the critical importance of understanding adult thrip dynamics in the context of TSWV transmission and its potential impact on plant health.
+      <br></br>
+      Images
+      </h3><h3>
+      Model Table of Initial Conditions Used in Code
+      </h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/ic.png" class="img-fluid">      
+      </div>
+      <h3>Function dependency diagram</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/dependency.jpg" class="img-fluid">      
+      </div>
+      <h3>Results of the Viral Vector Dynamics Modeling</h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/vector-modeling.png" class="img-fluid">      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">Plant Health and Susceptibility</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>Model Purpose</h3>
+      <h3>
+      The purpose is to model the interaction between the virus and the plant community. That is, how the viral transmission will lead to infection, removal, and further spread of the virus, and how these quantities are impacted by the implementation of our RNAi solution.
+      <br></br>
+      We used a combination of two models: a modified susceptible, infected, removed (SIR) model and a Monte Carlo model. The SIR model is modified by adding an additional population called the deceased population and introducing a new rate, delta, to determine the rate of death from the infected plants. Since the SIR model is an ODE model, the initialization of the infection, recovery, and death rate is important, to prevent over-relying on one set value for each rate. Thus, we used a Monte Carlo model to run multiple simulations with new randomly picked initial rates that were selected from an appropriate range. The collective result of a lot of trials will abide by the law of big numbers and by taking the mean of all the trials, it would give us a more accurate estimation of the TSWV infection within the plant population with varying initial conditions.
+      <br></br>
+      Assumptions</h3>
+      <h3>
+      Determining the range of rates for the Monte Carlo model to randomly select is crucial for an accurate simulation. We assumed that all 10 000 plants in the simulation are treated with the RNAi-producing E.coli. The infection rate is the range in which the viral dynamics subteam uses for their thrips infection rate as TSWV does not transmit through airborne but through thrips, therefore modeling the interaction between the thrips and plants would be more suitable in this case. The recovery rate is determined by the Lab’s designed dsRNA as the mean value and relies on the RNAi subteam to find a suitable range. Lastly, we set the death rate to the incubation period of TSWV, at 14-28 days, because TSWV has 100% lethality. If, by the end of the virus’ incubation period, the designed dsRNA was unable to interfere with the TSWV, the plant would be deceased and removed.
+      <br></br>
+      Analysis</h3>
+      <h3>
+      Our ODE model consists of a system of equations to describe the plant susceptibility and viral transmission.
+      </h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/susceptibility-ode.png" class="img-fluid">      
+      </div>
+      <h3>where:</h3>
+      <ol>
+        <li>ds/dt: rate of susceptible</li>
+        <li>di/dt: rate of infected</li>
+        <li>dr/dt: rate of recovered</li>
+        <li>dd/dt: rate of deceased</li>
+        <li>𝛽: infection rate</li>
+        <li>𝛾: recovery rate</li>
+        <li>𝛿: deceased rate</li>
+        <li>s(t): susceptible population</li>
+        <li>i(t): infected population</li>
+      </ol>
+      <h3>Results</h3>
+      <h3>
+      Our figure shows that after 500 days of simulation, around 39.1% of the plant population will die, 40.3% of the population will be recovered, 20.2% have not contracted TSWV and 3.2% will still be infected. This graph is a mean combination of all 10000 simulations in which the mean recovery rate is around 2.4%, death rate is 2.37%, and infection rate is 14.5%. R0 is calculated by infection rate/recovery rate which it determines on average 1 infected plant can infect r0 of plants in one day, which in this case is 5.82 plants infected by 1 infected per day. We can also see around 50-80 days, the number of infected plants peaked at around than 22% of the population, after that all the population slowly plateaued to a number where 60% of the plants are still alive(some being susceptible and some recovered from TSWV). Our model suggests that the RNA interference solution has the potential to reduce economic loss from burning the infected crops as it used to be a 100% lethality from TSWV. There could be improvements by increasing the rate of recovery for the plants by the dsRNA.
+      <br></br>
+      Images
+      </h3>
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/susceptibility-model.png" class="img-fluid">      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">RNAi Mechanism</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>Introduction</h3>
+      <h3>
+      Multiple factors can influence the dynamics of the RNA interference (RNAi) mechanism at time t. The primary variables to account for include the concentrations of double-stranded RNA (dsRNA), pre-RNA-induced silencing complexes (pre-RISCs), RISC-messenger RNA (RISC-mRNA) complexes, and mRNA itself. These are the molecules involved at each step of the reaction pathway, and thus, the most natural approach to understanding them is to model their concentrations as functions of time using chemical kinetics. For simplicity, consider that we are silencing the translation of a host mRNA. This allows us to make the assumption that there is a constant initial concentration of it, since its production and degradation reactions are in equilibrium with one another. In the case of viral mRNA, this is not necessarily the case a priori. Rather, its production depends on the concentration of the viral RNA-dependent RNA polymerase (RdRp), which in turn, depends on a number of other variables.
+      <br></br>
+      Tomato spotted wilt virus (TSWV) is an RNA virus with a genome segmented into three strands, where the small-sized one (S) codes for the nucleocapsid (N) protein. This is essential since we are creating dsRNAs that mimic the sequences found within this protein. The specific length being processed by our Lab & Design subteam is about 693 nucleotides, meaning the Dicer protein (within RISCs) cleaves each dsRNA into roughly 32 smaller segments. Note that the average siRNA is composed of about 22 nucleotides (i.e., 693/22 ≈ 32).
+      <br></br>
+      As explained later, there is a secondary amplification pathway wherein the host RdRp can “complete” the RISC-mRNA complex, producing more dsRNA; we surmise that the host RdRp is in excess. With these assumptions, we obtain the following differential equations: Let D(t), R(t), C(t), and M(t) denote the concentrations of dsRNA, pre-RISCs, RISCs, and targeted host mRNA respectively.
+      </h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r1.png" class="img-fluid">      
+      </div>
+
+      <h3>Note that, by the rate equation, the rate of the 1set reaction (i.e., Dicer cleaving dsRNA into siRNA) is:</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r2.png" class="img-fluid">      
+      </div>
+
+      <h3>Also, dsRNA is produced using host mRNA once siRNA is bound to it (via RdRp), as shown in (1), where g is the rate constant.</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r3.png" class="img-fluid">      
+      </div>
+
+      <h3>In (3), we have n since each dsRNA is cleaved into n siRNAs. Evidently, mRNA undergoes degradation at a certain rate by some rate equation. Moreover, pre-RISCs become RISC-mRNA complexes after removal of the passenger strand, which we assume to occur rapidly. Therefore, by the rate equation and law of mass action, the change in concentration is directly proportional to the product of the concentrations of reactants.</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r4.png" class="img-fluid">      
+      </div>
+
+      <h3>Since our engineered dsRNA is chemically equivalent to mRNA, besides having only two strands, (4) describes the former’s length.</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r5.png" class="img-fluid">      
+      </div>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r6.png" class="img-fluid">      
+      </div>
+
+      <h3>Conversely, with a higher initial concentration of dsRNA where d(0) = 1000, the following is seen instead:</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r7.png" class="img-fluid">      
+      </div>
+
+      <h3>We observe that the level of mRNA has reduced in both cases. As stated by Bergstrom et al. (2003), the level of mRNA silencing is independent of the starting dose of dsRNA. In fact, if the initial dose is above some cutoff value (given explicitly through parameters in the abovementioned paper), then the mRNA translation is silenced to the same degree. To make the model dosage dependent, a unidirectional amplification pathway is proposed in which the second strand synthesized by RdRp in the RISC-mRNA complex is only upstream of the siRNA. This is also seen as a defense mechanism against accidental self-directed responses.
+      <br></br>
+      Viral Anatomy, Physiology, and Interactions</h3>
+
+      <h3>Figure 3 illustrates the interactions between TSWV and plant cells:</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r8.png" class="img-fluid">      
+      </div>
+
+      <h3>The virus has an envelope composed of glycoproteins GN and GC, which play important roles in general viral functioning. Notice that the envelope also consists of a host cell membrane.</h3>
+
+      <h3>As stated earlier, TSWV is a segmented virus with strands S, M, and L (small, medium, and large respectively). The ambisense S segment codes for the N protein, and is approximately 2.9 kilobases long (i.e., 2900 ribonucleotides); the L segment consists of a single ORF (open reading frame) encoding for viral RdRp for replication and transcription. The M segment codes for a single polyprotein serving as a precursor for both GN and GC. Later, this polyprotein is proteolytically digested to yield the mature GN and GC of 58 and 95 kDa, respectively (Whitfield et al., 2008). The small RNA encodes for a 28.8 kDa N protein. Additionally, the small and medium RNAs encode for two non-structural proteins of 33.6 and 30 kDa, named NSM and NSS respectively, by an ambisense coding strategy. The NSM protein facilitates the spread of the virus throughout the host, while the NSS protein is involved in the suppression of TSWV gene silencing. Due to the negative strandedness of the genome, virions contain several molecules of the RdRp to initiate rounds of replication of virion RNAs. The initial dose of RdRp to begin transcription to viral mRNA is found in the N protein; note that RdRp is a protein itself.</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r9.png" class="img-fluid">      
+      </div>
+
+      <h3>Unlike positive-strand RNA viruses, the N protein level makes replication plausible in their negative-strand counterparts. In the latter, mRNA transcripts of each segment also contain a cap and a poly(A) tail, meaning they do not serve as anti-genomic RNA (Strauss et al., n.d.). The mRNAs are translated to make the various proteins, one of which is the N protein, enabling production of anti-genomic RNA by surrounding it as it forms. Then, the anti-genomic RNA is replicated by viral RdRp into genomic RNA. The ambisense strands work similarly, first producing mRNAs different from the anti-genomic RNAs, but differing in that they can be translated. In purely negative-strand segments, the anti-genomic, positive-strand RNA serves only as an intermediate to produce another copy of genomic RNA.</h3>
+
+      <h3>We now follow the approach of Groenenboom et al. to model the interactions between TSWV and the RNAi mechanism of plants, specifically through positive-strand viruses. Understandably, our situation proves more complicated, however, on account of TSWV being segmented and negative-stranded. Moreover, as mentioned above, replication here depends on the level of the N protein, unlike in positive-strand viruses. Consequently, we generalize their growth rate models to individual segments, incorporating the N protein dependence by treating it as a reactant in the synthesis of positive-strand segments, the first step in replication.</h3>
+
+      <h3>Let R(t), S+(t), S-(t), M+(t), M-(t), L+(t), L-(t), and N(t) denote the number of molecules of viral RdRp, antigenomic/genomic S, M, and L segments, and N protein respectively; let D-L(D+L)/D-M(D+M) be the amount of dsRNA intermediate made from genomic/antigenomic S, M, and L segments during replication; let RSa(RMa)(RLa) be the active viral RdRp that synthesizes genomic S(M)(L) segments (during semi-conservative replication) of multiple genomic strands from one single antigenomic S(M)(L) strand; let D+S(D-S)/D+M(D-M)/D+L(D-L) be the amount of dsRNA intermediate made from genomic/antigenomic S, M, and L segments during replication; let RSa, RMa, and RLa be the active viral RdRp that synthesizes negative-strand L segments (during semi-conservative replication) of multiple negative strands from a single, positive L strand. Assume that RdRp associates with positive-strand/negative-strand/ambisense RNA with maximum rate o, and let fL-, fL+, fM-, fM+, fS-, fS+ be the preference for RdRp for their respective RNAs. These parameters are subject to the constraint: fS+ + fS- + fM+ + fM- + fL+ + fL-= 1. We impose fL- ≥ fL+ because L+ cannot be used for protein production. Thus, it is less likely that a RdRp on L- produces the complementary strand since it also produces its associated protein (i.e., viral RdRp). Moreover, ambisense, anti-genomic segments (viz., S and M) can be used for protein production as well (Strauss et al., n.d.). Therefore, we impose fS+ = fS- = fS, fM+ = fM- = fM, and  fL- ≥ fS, fM, fL+, owing to RdRp ignoring all transcription signals when in replication mode. In the paper by Groenenboom et al, the rate at which proteins are produced are not taken into account. Instead, a Michaelis–Menten kinetic model is assumed, which is standard to model the growth of microorganisms. Here, the nucleocapsid protein influences the production of D-S, D-M, and D-L, the first step in replication. So, let N(t) be the number of nucleocapsid proteins.</h3>
+
+      <h3>One key difference is that we now have two types of RdRp: host RdRp and viral-encoded RdRp. As said before, we assume that host RdRp is in excess. However, this cannot be the case for viral RdRp because it can be synthesized. Let hL(hM) (hS) be the rate at which RdRp disassociates from the dsRNAs formed (the complex can randomly dissociate into a minus, plus L strand and RdRp). So this is a way in which the RdRp gets free and c</h3>
+
+      <h3>The DL + complex represents the complex formed by multiple RdRps synthesizing genomic L segments from one antigenomic L segment (during replication). So the complex may contain several RdRps at once transcribing it. The complex will dissociate completely when there’s only one RdRp left i.e. one genomic strand bound to plus L -segment, which happens when all the other genomic strands synthesized from this one plus L -segment have dissociated. Thus, if DL + represents the number of these complexes, the probability that any one of them will contain one RdRp is, as mentioned in [4], 1 - 1 DL +  Ra L-DL + (it follows from simple combinatorial arguments). Thus, the expected number of DL + complexes at a time having one RdRp is DL + 1 - 1 DL +  Ra L-DL + . So the dissociation rate of DL + is hL DL + 1 - 1 DL +  Ra L-DL + . Similarly for M, S.</h3>
+
+      <h3>Let oD be the maximum rate at which RdRp associates with DL + / DM + /DS +. We assume that the maximum rate is the same for each. Let dr, d be the background degradation rates of RdRp and single stranded RNA. We are assuming that rate is identical for all of these. It might be interesting to see what happens when all the background degradation rates are 0. Note that this might be a mechanism by which a cell might avoid self-directed responses.</h3>
+
+      <h3>Let V(t) be the number of virions. In [4], the virion production rate was modelled using Michaelis– Menten kinetics. Here, since we are also modelling the nucleocapsid proteins and individual strands, we can assume that the rate of virion formation is proportional to the amount of the nucleocapsid protein, and each of the negative strands. Thus, we assume that:</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r10.png" class="img-fluid">      
+      </div>
+
+      <h3>where rV is some constant, corresponding the maximum growth rate of the assembled virion.
+      <br></br>
+      Let:</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r11.png" class="img-fluid">      
+      </div>
+
+      <h3>Let G be the cleavage rate of viral dsRNA by dicer. Unlike in [4], we assume that there is an unlimited supply of dicer. To incorporate RNAi, let’s try to model the silencing of mRNA corresponding the N proteins. In reality, all other mRNAs will be silenced, but we will not be considering those cases. This is primarily because if we can show that the level of N protein will go down, then virion production must also go down  N(t) will reduce, leading to reduction of L-(t,) M-(t), S-(t). Let mN(t) be the number mRNA molecules corresponding to the N protein. We introduce two more parameters αt, βt where βt is the saturation constant and αt is the maximum rate of transcription of the small segment to mN. Let PR(t) denote the number of pre-RISC complex molecules containing the siRNA corresponding to the N protein, and let dPR be its background degradation rate. Let C(t) be the number of RISC-mRNA complex molecules. dC denotes the degradation rate of C and g denotes the rate of the amplification response.
+      <br></br>
+      We get the following differential equations:
+      </h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r12.png" class="img-fluid">      
+      </div>
+
+      <h3>Given the time and computational resources, guessing the value of the parameters to achieve the desired outcome has proven very challenging because of the sheer complexity. We have proposed our model, and simulating the parameter space for which silencing is achieved is our next goal.
+      <br></br>
+      Results</h3>
+
+      <h3>The purpose of our mathematical models is to simulate the steps of RNA interference, starting from E. coli minicell formation, and progressing to the point of mRNA genetic silencing of the tomato spotted wilt virus (TSWV).</h3>
+
+      <h3>To start, our interference model seeks to record alterations in the concentration of the RNA-induced silencing complex (RISC) and a plant's mRNA expression of TSWV. This model helps to reveal that as RNAi-mediated mRNA degradation takes place, mRNA concentrations should also diminish.</h3>
+
+      <h3>Our models are based on chemical kinetics, a subset of stochastic modelling, designed to simulate the formation of minicells, dsRNA, and subsequently the degradation of dsRNA. As mentioned in the lab and design section, we genetically modify E. coli cells by inserting plasmids vectors, which are transcribed to the dsRNA molecules using T7 polymerase, which is itself produced inside E coli from another inserted plasmid. Note that E. coli contains the necessary DNA-dependent RNA polymerase to produce T7 polymerase, which then transcribes the DNA on the first plasmid to dsRNA molecules. The cell-division mechanism of E. coli cells is modified to produce minicells containing dsRNA (with no additional genetic material). Thus, we imagine a swarm of mini-cells entering the plant, each of which collide with cell walls, injecting the dsRNA into the cytoplasm of the cell.</h3>
+
+      <h3>In conclusion, our model has 2 stages - dsRNA using minicells (modelled using traditional population dynamics), and then the RNAi mechanism beginning from dsRNA in the cytoplasm. The intermediate step - of the minicells entering the plant and releasing the dsRNA - is not modelled. We encode that information by assuming a constant supply rate of dsRNA into a cell. However, we will later see that the precise rate at which dsRNA enters the cell with time does not matter because after the mRNA has been degraded, the leftover dsRNA does not affect any cell processes. This is to prevent self-directed silencing (Bergstrom et al., 2003).
+      <br></br>
+      This diagram shows the RNAi silencing pathway (taken from [7])</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r13.png" class="img-fluid">      
+      </div>
+
+      <h3>Note that there is a secondary amplification pathway not shown in the above figure. When the siRNA is bound to the mRNA with the RISC surrounding it (see step 4 in the figure), the host RdRp can synthesize a dsRNA molecule from it. This amplifies the RNAi response, creating more dsRNA than what entered the cell from the minicells, introducing a time delay in mRNA degradation but ultimately leading to more degradation later on.</h3>
+
+      <h3>We model the RNAi silencing pathway using techniques from chemical kinetics. This seems to be the most straightforward approach, given that the sequence of steps in the silencing pathway is known (as explained above). We first consider the case of silencing host-mRNA to simplify the dynamics, using models provided in [3]. We then use inspiration from [4] to create a model explaining the silencing of TSWV due to RNA interference, changing various assumptions in the host-mRNA degradation case. Regardless of the latter being considerably more complicated due to the existence of more parameters that must be empirically determined, Groenenboom and colleagues show that RNA silencing works for a wide range of parameter values. We try to do the same (I don’t know if we’ll be successful (seems unlikely because TSWV is more complicated than most viruses), but it’d be very cool if we were).</h3>
+
+      <h3>It is important to note, however, that all our models are intracellular and assume that dsRNA enters before the virus has entered the cell. Creating a more accurate model, which is the future goal of this project, will involve the following:</h3>
+
+      <ul>
+        <li>Incorporate time-delays associated to the relative entry of the virion and the dsRNA. In other words, how would the model change if the cell was nearing infection while dsRNA uptake?</li>
+        <li>Modelling intracellular interactions (see chapter 2 in [5]).</li>
+      </ul>
+
+      <h3>The ODE provides results that matches with what the predictions will be, which is that the virus will have an initial spike where the number of virions increase exponentially, but later on the number of RISC will be produced enough to start changing the slope of increment to decrement and maintain the virus level the same. Since we have set a limit for the logistic growth of the E. coli, there will be a maximum rate where the RISC is produced at a constant rate at some point when the E. coli’s population is stabilized.</h3>
+
+      <h3>The Python code in prod-ode.py defines an ODE model for simulating a biological system involving the production of dsRNA-containing minicells and RNAi mechanisms within plant cells. The main function mc_prod_system describes the ODE system, where the biological variables such as E. coli population, minicell formation, dsRNA, siRNA, RISC, and target mRNA concentrations change over time. These differential equations capture the dynamics of these components and their interactions within the system.</h3>
+
+      <h3>The model’s parameters are defined to represent various rates, including replication and degradation rates of E. coli, minicell formation rate, dsRNA conversion factor, dsRNA production and degradation rates, and more. Initialconditions for the concentrations of these components are set, and a time span for the simulation is specified, producing the following graph.</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r14.png" class="img-fluid">      
+      </div>
+
+      <h3>Overall, the plot provides insights into the dynamics of the biological system being modeled. It shows how E. coli population growth stabilizes, how free dsRNA accumulates over time, and how minicell populations decline. The behavior of these variables can have important implications for the biological processes under investigation, such as RNA interference and minicell production. Further insights and interpretations would depend on the specific biological context and the intended purpose of the simulation. The curve representing the E. coli population exhibits logistic growth. Initially, it increases slightly as the population replicates rapidly in the absence of resource limitations. As the population approaches the carrying capacity (defined as 20, 000 cells), the growth rate slows down and the curve eventually plateaus, stabilizing as expected from logistic growth. The curve representing the concentration of free dsRNA is curving upwards exponentially. This behaviour suggests that dsRNA is being continuously produced and released into the system at a rate greater than it is degraded or incorporated into minicells. The exponential increase may have biological implications, such as its potential role in triggering RNAi mechanisms. The curve representing minicell population/concentration exhibits a downward trend, indicating a gradual decrease in minicells over time. The negative values may be interpreted as minicells being completely consumed or degraded over the course of the simulation.</h3>
+
+      <h3>The Python code in interference-ode.py simulates the interferences, interactions, and interplay between E. coli, dsRNA, siRNA, RISC, and TSWV over time. It includes plots to visualize the behaviour of these components in the system, as shown below:</h3>
+
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/r15.png" class="img-fluid">      
+      </div>
+
+      <h3>Overall, this simulation provides a qualitative representation of how the different components in the biological system interact over time. The dynamics observed in the plots are influenced by various parameters and processes, including growth, decay, conversion, and interactions between the components. The plot in the upper-left corner shows the dynamics of the E. coli population, exhibiting logistic growth, as indicated by the plateau. Growth is influenced by factors such as replication and degradation rates, as well as resource limitations. The plot in the upper-right corner represents the concentration of dsRNA over time. The dsRNA concentration increases initially, then likewise stabilizes. The siRNA plot showcases the same effect, as dsRNA is converted into siRNA. The plot in the middle-right corner depicts the concentration of RISC over time. RISC concentration increases as siRNA is available in the system, as per the specified percentage conversion from siRNA to RISC. The plot in the middle-right corner depicts the concentration of RISC over time. RISC concentration increases as siRNA is available in the system, as per the specified percentage conversion from siRNA to RISC. The plot in the lower-left corner represents the concentration of TSWV. TSWV initially increases over time, suggesting viral replication. However, its growth rate may vary due to the complex interplay with RISC and other factors. The plot in the lower-right corner shows the normalized trends of all components with respect to their maximum values. This visualization allows you to compare the relative changes in E. coli, dsRNA, siRNA, RISC, and TSWV concentrations over time. It provides a clear view of their relative magnitudes and how they evolve in relation to one another.
+      <br></br>
+      Conclusion</h3>
+      <h3>
+      In constructing our models, we assume that the RNAi mechanism in the chosen biological system is well-established and characterized. This includes the presence of functional RISCs capable of guiding siRNAs to their target mRNAs for translational inhibition and degradation. Additionally, we assume that the delivery method for introducing siRNAs into the target plant cells is swift and reliable, ensuring a sufficient concentration to exert the desired gene-silencing effects. Moreover, we ascertain that the siRNAs used in the model are specific to the target gene of interest, minimizing off-target effects (Bergstrom et al., 2003; Neofytou, 2017).</h3>
+
+      <h3>In terms of parameters, we define most in relation to RNAi kinetics, including RISC binding rates and Dicer protein processing rates, to list a few. We also account for initial conditions such as minicell formation and breakdown rates, mRNA formation and dissociation rates, and initial minicell, RISC, and mRNA concentrations. Probabilities and percentages like E. coli uptake and replication, and the TSWV multiplier (i.e., average range negative strand RNA burst size) are also considered to better quantify the dynamics of gene silencing over time.</h3>
+
+      <h3>While our model serves as a valuable tool for predicting and understanding RNAi outcomes, it is important to acknowledge that real biological systems can exhibit complexities beyond our assumptions. Therefore, our results should be interpreted within the context of these assumptions, recognizing that deviations from ideal conditions will occur in practice (Bergstrom et al., 2003).</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <div class="mt-4">
+      <p class="fw-bold">
+        REFERENCES
+      </p>
+      <p class="fw-bold">Bacterial Dynamics</p>
+      <ul class="navbar-nav mb-5">
+        <li class="mb-2">Fujikawa, H., Kai, A., & Morozumi, S. (2004). A new logistic model for Escherichia coli growth at constant and dynamic temperatures. Food Microbiology, 21(5), 501-509.</li>
+        <li class="my-2">Kale, T., Khatri, D., & Athale, C. A. (2022). Cell size and shape regulation of E. coli determines surface area scaling with volume. bioRxiv, 2022-03.</li>
+        <li class="my-2">Nev, O. A., Lindsay, R. J., Jepson, A., Butt, L., Beardmore, R. E., & Gudelj, I. (2021). Predicting microbial growth dynamics in response to nutrient availability. PLoS computational biology, 17(3), e1008817.</li>
+        <li class="my-2">Williams, T. R., Moyne, A. L., Harris, L. J., & Marco, M. L. (2013). Season, irrigation, leaf age, and Escherichia coli inoculation influence the bacterial diversity in the lettuce phyllosphere. PloS one, 8(7), e68642.</li>
+      </ul>
+      <p class="fw-bold">Viral Dynamics</p>
+      <ul class="navbar-nav mb-5">
+        <li class="mb-2">Ogada, P. A., Moualeu, D. P., & Poehling, H.-M. (2016). Predictive models for tomato spotted wilt virus spread dynamics, considering Frankliniella occidentalis specific life processes as influenced by the virus. PLOS ONE, 11(5). https://doi.org/10.1371/journal.pone.0154533</li>
+      </ul>
+      <p class="fw-bold">Plant Health and Susceptibility</p>
+      <ul class="navbar-nav mb-5">
+        <li class="mb-2">Dhar, M., & Bhattacharya, P. (2019). Analysis of SIR epidemic model with different basic reproduction numbers and validation with HIV and TSWV data. Iranian Journal of Science and Technology, Transactions A: Science, 43, 2385-2397.</li>
+        <li class="mb-2">Smith, D., & Moore, L. (2004). The SIR model for spread of disease-the differential equation model. Convergence.</li>
+        <li class="my-2">Prodanov, D. (2022). Analytical solutions and parameter estimation of the SIR epidemic model. Mathematical Analysis of Infectious Diseases, 163-189.Chicago</li>
+        <li class="mb-2">Harrison, R. L. (2010, January). Introduction to monte carlo simulation. In AIP conference proceedings (Vol. 1204, No. 1, pp. 17-21). American Institute of Physics.</li>
+      </ul>
+      <p class="fw-bold">RNAi Mechanism</p>
+      <ul class="navbar-nav mb-5">
+        <li class="mb-2">Strauss, J., et al. Overview of Viruses and Virus Infection.</li>
+        <li class="my-2">The Monod Equation. https://en.wikipedia.org/wiki/Monod_equation</li>
+        <li class="my-2">Bergstrom, C. T., McKittrick, E., & Antia, R. (2003). Mathematical models of RNA silencing: Unidirectional amplification limits accidental self-directed reactions. Proceedings of the National Academy of Sciences, 100(20), 11511–11516. https://doi.org/10.1073/pnas.1931639100</li>
+        <li class="my-2">Groenenboom et al. The dynamics and efficacy of antiviral RNA silencing: A model study.</li>
+        <li class="my-2">Neofytou, G. (2017). Mathematical models of RNA interference in plants. Sussex Research Online.</li>
+        <li class="my-2">Voloudakis, A. E., Holeva, M. C., Sarin, L. P., Bamford, D. H., Vargas, M., Poranen, M. M., & Tenllado, F. (2014). Efficient double-stranded RNA production methods for utilization in plant virus control. Methods in Molecular Biology, 255–274. https://doi.org/10.1007/978-1-4939-1743-3_19</li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

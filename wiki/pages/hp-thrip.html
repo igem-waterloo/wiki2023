@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="text-decoration-underline">Human Practices</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-4"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='human-practices') }}"
+        style="text-decoration: none; color: black">
+        Human Practices
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-problem') }}"
+      style="text-decoration: none; color: black">
+      Defining the Problem
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-thrip') }}"
+      style="text-decoration: none; color: black">
+      The Thrip
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='hp-solution') }}"
+      style="text-decoration: none; color: black">
+      Our Solution
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid">
+      </div>
+      <div class="col-6">
+        <img src="https://static.igem.wiki/teams/4704/wiki/tomato-plant.png" class="img-fluid translate-middle-x-flipped">
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">THE THRIP</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>
+      While Western Flower Thrips (Frankiliniella occidentalis) are native to North America, they can now be found in South America, Australia, Oceania, Africa, Europe, and Asia as well due to the import and export of plants (Reitz et al., 2020). Western flower thrips are one of the most common thrip species in Ontario, feeding on a variety of plants and causing damage by sucking out contents of plant cells through mouthparts, leading to white and brown spots due to destroyed plant cells (Murphy, Ferguson & Shipp, 2022). In tomatoes, thrip damage may first be noticed on lower leaves, and ghost spotting may be observed due to egg laying; in addition, heavy infestation can reduce photosynthesis (Murphy, Ferguson & Shipp, 2022). Most notably, thrips act as vectors of the tospoviruses tomato spotted wilt virus (TSWV) and impatiens necrotic spot virus (INSV) (Murphy, Ferguson & Shipp, 2022). Thrips tend to prefer cultivated over wild tomatoes due to wild tomatoes containing higher levels of acylsugars, which deter feeding and oviposition (Murphy, Ferguson & Shipp, 2022).
+      <br></br>
+      Western Flower Thrips are weak fliers that rely on wind for long-distance dispersal and they choose plant hosts based on visual, morphological and chemical cues (Reitz et al., 2020). Most notably, their host plant selection is affected by the reflection of light from yellow and UV ranges and they can also be attracted by certain plant volatiles such as phenylpropanoids, monoterpenes, sesquiterpenes, esters and 4-pyridyl carbonyl compounds (Reitz et al., 2020). Thrips tend to prefer plants that take on circular or other simple geometric shapes, as well as those with complex rounded floral shapes (Reitz et al., 2020).
+      <br></br>
+      Thrips exhibit a high degree of resistance to many commonly used insecticides including carbamates, organophosphates and pyrethroids (Gao et al., 2012). Their short reproduction cycle allows for the rapid development of insecticide resistance among thrip populations (Gao et al., 2012). Additionally, thrips exhibit haplo-diploid reproduction, which means that susceptible genes will not be carried on in males, thus the resistant gene spreads more rapidly (Gao et al., 2012). There are 153 documented cases of insecticide resistance in western flower thrips populations from around the world with populations continuing to develop resistance to new insecticides (Gao et al., 2012).
+      </h3>
+    </div>
+    <div class="mt-4">
+      <img src="https://static.igem.wiki/teams/4704/wiki/thrip.jpg" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

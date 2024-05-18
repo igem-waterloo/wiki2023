@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h1 class="text-decoration-underline">Awards</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-5"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='education') }}"
+        style="text-decoration: none; color: black">
+        Education
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='human-practices') }}"
+      style="text-decoration: none; color: black">
+      Integrated Human Practices
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='model') }}"
+      style="text-decoration: none; color: black">
+      Model
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-7">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/dna.png" class="img-fluid"> 
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <h1 class="fw-bold text-dark-green">Education</h1>
+  <div class="col col-flex">
+    <div class="mt-4 col-10">
+      <h3>
+      The University of Waterloo’s iGEM team meticulously planned and hosted GemStart: A Jumpstart into Synthetic Biology. Gemstart was a conference centered around learning more about the production of a successful iGEM and synthetic biology project, how those projects can expand beyond iGEM, and the current outlook of the synthetic biology industry. The conference invited iGEM teams from across Ontario and students from the University of Waterloo, allowing them to learn and network with like minded students and learn from experts in the industry.
+      <br></br>
+      GemStart hosted 3 different speakers, each with a unique experience and knowledge to share with attendees, as well as two hands-on workshops.
+      <br></br>
+      The first speaker was Brian Ingalls, a processor at the University of Waterloo performing research in the development of mathematical models to predict the behavior of intracellular molecular networks and heterogeneous cellular communities. Professor Ingalls shared the history of iGEM since its founding days, as well as more on the complexity of defining synthetic biology and its importance. Having been the advisor for the University of Waterloo iGEM team since 2005, Professor Ingalls was able to share advice on project structures and timelines for the iGEM teams in attendance.
+      <br></br>
+      The second speaker was Danielle Rose, Ceo and founder of biotechnology company Ceragen that focuses on increasing crop yields through plant microbiome engineering. Rose was also a member and founder of iGEM at the University of Guelph. Rose shared with attendees her story of creating a startup and gave advice on the hardships many startups face. Rose was able to speak on building a strong team around you and gaining support from professors and shareholders.
+      <br></br>
+      The third speaker was PhD candidate and iGEM judge Atiyeh Ahmadi, whose research is focused in synthetic biology. Ahmadi shared with attendees how to build a strong presentation and what iGEM judges are looking for, as well as the structure of the iGEM judging, such as the villages. Ahmadi also shared about her life as a PhD student and what can be expected, as well as advice for those looking to pursue postgraduate studies.
+      <br></br>
+      The first workshop was organized by Jacquelyn Easson, a North American iGEM ambassador. Easson shared and brainstormed with attendees what makes a good iGEM project and what makes a strong team. Easson also shared information about metal standings and what teams can expect.
+      <br></br>
+      The second workshop was organized by the University of Waterloo iGEM Human Practices team. This workshop focussed on practicing and improving presentation skills by presenting teams with unique scenarios and asking them to produce a solution to pitch within 15 minutes. This short time frame allowed teams to focus less on the technicality of the solution, and more on the way the information was present, such as tone of voice, charisma and helping the audience come to the conclusion you want.
+      <br></br>
+      Overall, the conference was an opportunity for students across Ontario, both a part of and separate from iGEM, to learn about the ever changing synthetic biology industry, and how they can expand and improve their project product, not only in iGEM, but in future research and careers. Students were able to learn from each other in workshops and from professional speakers, as well as network to produce new connections.
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <div class="mt-5 mb-4">
+      <img src="https://static.igem.wiki/teams/4704/wiki/gemstart.png" class="img-fluid">
+    </div>
+    <div class="mt-4">
+      <img src="https://static.igem.wiki/teams/4704/wiki/gemstart-team.png" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

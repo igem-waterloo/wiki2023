@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col">
+    <h1>Explore our project!</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-3">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/guarden.png" class="img-fluid">      
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-5"
+  style="display: flex; flex-direction: column; align-items: flex-start;">
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 3px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='description') }}"
+        style="text-decoration: none; color: black">
+        Description
+      </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='engineering') }}"
+      style="text-decoration: none; color: black">
+      Engineering
+    </a>
+    </button>
+    <button style="font-size: 25px; width: 75%; text-align: left; background: none; border-width: 0 0 2px 0; font-weight: bold; padding-bottom: 5px">
+      <a href="{{ url_for('pages', page='project-notebook') }}"
+      style="text-decoration: none; color: black">
+      Notebook
+    </a>
+    </button>
+  </div>
+  <div class="col-lg-7">
+      <div class="mt-4 mb-4 text-center">
+        <img src="https://static.igem.wiki/teams/4704/wiki/healthy-tomato.png" class="img-fluid"> 
+      </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col col-flex">
+    <h3 class="subheading bg-red text-white">NOTEBOOK</h3>
+    <img src="https://static.igem.wiki/teams/4704/wiki/1.png" class="img-fluid">
+    <img src="https://static.igem.wiki/teams/4704/wiki/2.png" class="img-fluid">
+    <img src="https://static.igem.wiki/teams/4704/wiki/3.png" class="img-fluid">
+  </div>
+</div>
+
+{% endblock %}
